@@ -26,7 +26,7 @@ body{
 
 }
 .menubar{
-    background: #000000;
+    background: rgba(0, 0, 0,0.2);
     text-align: center;
 }
 nav{
@@ -76,10 +76,12 @@ nav ul li a:hover::after{
 }
 .menubar ul li a{
     text-decoration: none;
+    color: #080808;
 }
 .active1,.menubar ul li a:hover{
-    background: purple;
+    background: white;
     border-radius: 3px;
+    color: white;
 }
 .menubar .fa{
     margin-right: 8px;
@@ -91,7 +93,7 @@ nav ul li a:hover::after{
 .menubar ul li:hover .submenu-1{
     display: block;
     position: absolute;
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0,0.2);
     margin-top: 15px;
     margin-left: -15px;
 }
@@ -125,7 +127,7 @@ nav ul li a:hover::after{
     display: block;
     margin-top: -40px;
     margin-left: 140px;
-    background: black;
+    background: rgba(0, 0, 0,0.2);
 }
 /* --------------------------text transition------------------- */
 .header-text{
@@ -137,7 +139,7 @@ nav ul li a:hover::after{
     margin-top: 20px;
 }
 .header-text h1 span{
-    color: #0066FF;
+    color: white;
 }
 /* -------------------------about----------------------- */
 #about{
@@ -179,7 +181,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #0066FF;
+    background: white;
     position: absolute;
     left: 0;
     bottom: -8px;
