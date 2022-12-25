@@ -81,7 +81,6 @@ nav ul li a:hover::after{
 .active1,.menubar ul li a:hover{
     background: white;
     border-radius: 3px;
-    color: white;
 }
 .menubar .fa{
     margin-right: 8px;
@@ -93,7 +92,7 @@ nav ul li a:hover::after{
 .menubar ul li:hover .submenu-1{
     display: block;
     position: absolute;
-    background: rgba(0, 0, 0,0.2);
+    background: rgba(0, 0, 0,0.4);
     margin-top: 15px;
     margin-left: -15px;
 }
@@ -113,7 +112,7 @@ nav ul li a:hover::after{
     border-bottom: none;
 }
 .menubar ul li:hover .submenu-1 ul li a:hover{
-    color: white;
+    color: black;
 }
 /* -------------------------------sub-sub-menu------------------------------------------ */
 .fa-angle-right{
@@ -127,7 +126,7 @@ nav ul li a:hover::after{
     display: block;
     margin-top: -40px;
     margin-left: 140px;
-    background: rgba(0, 0, 0,0.2);
+    background: rgba(0, 0, 0,0.4);
 }
 /* --------------------------text transition------------------- */
 .header-text{
@@ -139,7 +138,7 @@ nav ul li a:hover::after{
     margin-top: 20px;
 }
 .header-text h1 span{
-    color: white;
+    color: #0066FF;
 }
 /* -------------------------about----------------------- */
 #about{
