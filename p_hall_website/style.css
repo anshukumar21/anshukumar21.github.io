@@ -204,6 +204,22 @@ nav ul li a:hover::after{
     display: block;
 }
 
+/* ---------------------sticky-header----------------- */
+nav.sticky{
+    position: fixed;
+    top: 0;
+    left: 20;
+    padding: 10px 9%;
+    background: rgba(0, 0, 0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: padding 1s;
+}
+nav.sticky ul{
+    width: auto;
+}
+
 /* --------------------------FACILITY------------------------- */
 #FACILITY{
     padding: 30px 0;

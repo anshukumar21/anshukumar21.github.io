@@ -11,7 +11,7 @@
 <body>
     <div id="header">
         <div class="container">
-            <nav>
+            <nav id="navbar">
                 <img src="images/logo.jpg" class="logo">
                 <div class="menubar">
                 <ul id="sidemenu">
@@ -183,6 +183,7 @@
     </script>
 
 
+
 <script>
 
     var tablinks = document.getElementsByClassName("tab-links");
@@ -208,6 +209,22 @@
         sidemeu.style.right="-200px";
     }
 </script>
+<!-- ----------------------sticky-nav------------------ -->
+<script>
+    var navbar=document.getElementById("navbar");
+    var sidemenu=document.getElementById("sidemenu");
+
+    window.onscroll=function(){
+        if(window.pageYOffset>=sidemenu.offsetTop){
+            navbar.classList.add("sticky");
+        }
+        else{
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
+
+<!-- ----------------------------------------------------------------- -->
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbw2HN68Zf2tYG9SMoPl9ayQNyYzmKuXzxdmetjQOjU1N7zI-EJFwTVjowmvp61Z4CLTFw/exec'
     const form = document.forms['submit-to-google-sheet']
