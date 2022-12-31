@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <link rel="stylesheet" href="jquery.flipster.min.css">
 </head>
 <body>
     <header>
@@ -52,14 +53,24 @@
       </div>
     </div>
   </div>
-  <script>
-  $(document).ready(function(){
-    $('.counter').counterUp({
-      delay: 10,
-      time: 1200
-    });
-  });
-  </script>
+
+  <!-- ----------------------------------------Facility--------------------------------- -->
+  <div class="hero">
+    <div class="carousel">
+        <ul>
+            <li><img src="img/img1.jpg" alt=""></li>
+            <li><img src="img/img2.jpg" alt=""></li>
+            <li><img src="img/img3.jpg" alt=""></li>
+            <li><img src="img/img4.jpg" alt=""></li>
+            <li><img src="img/img5.jpg" alt=""></li>
+            <li><img src="img/img6.jpg" alt=""></li>
+            <li><img src="img/img7.jpg" alt=""></li>
+            <li><img src="img/img8.jpg" alt=""></li>
+            <li><img src="img/img9.jpg" alt=""></li>
+            <li><img src="img/img10.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
 <!-- ------------------HEC------------------------- -->
 <h1>HALL Executives Committee</h1>
     <div class="hec">
@@ -165,6 +176,7 @@
         </div>     
     </div>
 <!-- -------------------------HEC ends------------------------ -->
+
     <script type="text/javascript">
         window.addEventListener("scroll",function(){
             var header=document.querySelector("header");
@@ -180,5 +192,23 @@
           loop: true
       })
       </script>
+      <script>
+        $(document).ready(function(){
+          $('.counter').counterUp({
+            delay: 10,
+            time: 1200
+          });
+        });
+        </script>
+
+<!-- -----------------------carousel js--------------------- -->
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <script src="jquery.flipster.min.js"></script>
+        <script>
+            $('.carousel').flipster({
+            style:'carousel',
+            spacing: -0.3,
+        });
+        </script>
 </body>
 </html>
