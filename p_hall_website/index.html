@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
     <title>sticky nav</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jquery.flipster.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    <link rel="stylesheet" href="jquery.flipster.min.css">
 </head>
 <body>
     <header>
@@ -194,17 +194,8 @@
           loop: true
       })
       </script>
-      <script>
-        $(document).ready(function(){
-          $('.counter').counterUp({
-            delay: 10,
-            time: 1200
-          });
-        });
-        </script>
-
 <!-- -----------------------carousel js--------------------- -->
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script> -->
         <script src="jquery.flipster.min.js"></script>
         <script>
             $('.carousel').flipster({
@@ -212,5 +203,14 @@
             spacing: -0.3,
         });
         </script>
+
+<script>
+    $(document).ready(function(){
+      $('.counter').counterUp({
+        delay: 10,
+        time: 1200
+      });
+    });
+    </script>
 </body>
 </html>
