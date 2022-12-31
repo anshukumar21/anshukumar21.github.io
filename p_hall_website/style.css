@@ -155,7 +155,7 @@ header.sticky ul li a{
 /* -------------------------------galllery -------------------------------------- */
 .hero{
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   background: rgb(255, 255, 255);
   overflow: hidden;
 }
