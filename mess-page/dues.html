@@ -26,62 +26,6 @@
           <div id="dues-result"></div>
         </div>
       </div>
-    </div>
-    <script>
-        // Initialize the API client with your API key
-        gapi.load('client', () => {
-          gapi.client
-            .init({
-              apiKey: 'Your_api_key',
-              // Your API key from the Google Cloud Console
-              discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4']
-            })
-            .then(() => {
-              // Define the spreadsheet ID and range
-              const spreadsheetId = '1ZaqBi5M2UCcBxlDi6g360pwH-Wt_BeNAcqVHrdrPE8Q';
-              const range = 'Sheet1!A1:Z';
-    
-              // Get the current month
-              const currentMonth = new Date().toLocaleString('default', {
-                month: 'long'
-              });
-    
-              // Listen for the form submit
-              $('#submit-btn').click(async e => {
-                e.preventDefault();
-    
-                // Get the roll number from the input field
-                const rollNumber = $('#roll-number').val();
-    
-                // Get the data from the spreadsheet
-                const response = await gapi.client.sheets.spreadsheets.values.get({
-                  spreadsheetId,
-                  range
-                });
-                const data = response.result.values;
-    
-                // Find the row with the matching roll number
-                const studentData = data.find(row => row[0] === rollNumber);
-    
-                // If a matching roll number is found
-                if (studentData) {
-                  let grossTotal = 0;
-                  // Iterate through the student's data for the current month
-                  for (let i = 1; i < studentData.length; i++) {
-                    if (studentData[i] === currentMonth) {
-                      // sum up the gross total
-                      grossTotal += parseInt(studentData[i+1]);
-                    }
-                  }
-                  // Display the gross total on the page
-                  $('#dues-result').html(`<h3>Your gross total for ${currentMonth} is: ${grossTotal}</h3>`);
-                } else {
-                  // If a matching roll number is not found
-                  $('#dues-result').html(`<h3>No data found for roll number: ${rollNumber}</h3>`);
-                }
-              });
-            });
-        });
-    </script>          
+    </div>         
 </body>
 </html>

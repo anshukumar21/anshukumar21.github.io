@@ -57,6 +57,7 @@ body {
           font-family: Arial, sans-serif;
           background-repeat: no-repeat;
           background-attachment: fixed;
+          opacity: 0.7;
         }
         #day-selector {
   width: 150px;
@@ -102,6 +103,7 @@ body {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          opacity: 0.7;
         }
         
         /* Add a hover effect for the menu items */
@@ -141,10 +143,7 @@ body {
             opacity: 1;
           }
         }
-        .extra {
-    color: red;
-}
-@media (max-width: 600px) {
+        @media (max-width: 600px) {
   body {
     font-size: 0.9em;
   }
@@ -168,6 +167,10 @@ body {
     font-size: 1em;
   }
 }
+        .extra {
+    color: red;
+}
+
     </style>
 </head>
 <body>
@@ -185,7 +188,7 @@ body {
   <div id="menu-items"></div>
 </div>
 <div id="buttons" class="d-flex justify-content-center">
-    <button id="hall-dues" class="btn btn-primary mr-3">Show Dues</button>
+    <button id="hall-dues" class="btn btn-primary mr-3">View Dues</button>
     <button id="pay-dues" class="btn btn-success">Pay Dues</button>
 </div>
 <script>
