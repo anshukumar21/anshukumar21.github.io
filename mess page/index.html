@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        /* body {
+  font-family: Arial, sans-serif;
+}
+
+#menu {
+  text-align: center;
+}
+
+#menu h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#day-selector {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+#menu-items {
+
+  margin: 20px 0;
+  text-align: center;
+}
+
+#menu-items div {
+  margin-bottom: 10px;
+}
+
+#menu-items strong {
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 5px;
+}   */
+body {
+          background-color: #f2f2f2;
+          background-image: url("mess3.jpg");
+          background-size: cover;
+          font-family: Arial, sans-serif;
+        }
+        #day-selector {
+  width: 150px;
+  margin: 115px 12px;
+  display: flex;
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+        /* Center the menu container */
+        #menu {
+          text-align: center;
+          margin: 50px auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        /* Add a heading font and animation */
+        #menu h1 {
+          font-size: 2em;
+          margin-bottom: 80px;
+          text-align: left;
+          font-family: 'Montserrat', sans-serif;
+          animation: fadeIn 1s;
+          display: flex;
+          padding: 0px 540px;
+        }
+        
+        /* Add a cool font for the menu items */
+        #menu-items div {
+          font-family: 'Caveat', cursive;
+          font-size: 1.2em;
+          margin-bottom: 20px;
+          margin-right: 180px;
+          padding: 10px;
+          border-radius: 10px;
+          background-color: white;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        /* Add a hover effect for the menu items */
+        #menu-items div:hover {
+          transform: scale(1.1);
+        }
+
+        /* Add a cool font for the meal titles */
+        #menu-items strong {
+          font-size: 1.2em;
+          display: block;
+          margin-bottom: 5px;
+          font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Add an animation for the menu items */
+        #menu-items div {
+          animation: slideIn 0.5s;
+          display: block;
+        }    
+        /* Add an animation for the menu items */
+        @keyframes slideIn {
+          from {
+            transform: translateX(-100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+        
+        /* Add an animation for the heading */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        .extra {
+    color: red;
+}
+
+    </style>
+</head>
+<body>
+    <div id="menu">
+  <h1>Weekly Meal Menu</h1>
+  <select id="day-selector">
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
+  </select>
+  <div id="menu-items"></div>
+</div>
+<div id="buttons" class="d-flex justify-content-center">
+    <button id="hall-dues" class="btn btn-primary mr-3">Hall Dues</button>
+    <button id="pay-dues" class="btn btn-success">Pay Dues</button>
+</div>
+<script>
+    const menuItems = {
+  Monday: {
+    Morning: 'Pav Bhaji/Sandwich',
+    Lunch: 'Patta Gobhi Matar,Rajma,Papad <br>Extra:<span class="extra">Soya Chaap,Boondi,ladoo/Baloo Sahi</span>',
+    Dinner: 'Lauki Chana Sabji,Moong Dal,Rice<br>Extra:<span class="extra">Chicken Biryani,Gazar Halwa</span>'
+  },
+  Tuesday: {
+    Morning: 'Idli,Idli Masala,sambhar & Coconut Chutney',
+    Lunch: 'Kadhi Pakodi,Chana Aloo Masala <br>Extra:<span class="extra">Aloo Chat</span>',
+    Dinner: 'Mix Veg,Red Massor Dal, Custard<br>Extra:<span class="extra">Dahi Kabab</span>'
+  },
+  Wednesday: {
+    Morning: 'Methi paratha,chutney',
+    Lunch: 'Tehri,Papad,Raita,Gobhi Aloo<br>Extra:<span class="extra">Matar Mushroom</span>',
+    Dinner: 'paneer Do Pyaaza/Chicken Curry,Rice,Kali Masoor Daal,Naan,Missi Roti,gulab Jamun</span>'
+  },
+  Thursday: {
+    Morning: 'Besan chilla,Green Chutney,Tomato Sauce</span>',
+    Lunch: 'Indian Chilli Soyabeen,Black Masoor Dal,Boondi Raita<br>Extra:<span class="extra">Shahi Toast,Egg Curry</span>',
+    Dinner: 'Chana Dal Tadka,Sprouted Pulses sabji<br>Extra:<span class="extra">Butter Chicken,Emerti Rabdi</span>'
+  },
+  Friday: {
+    Morning: 'Uttapam,Sambhar & Coconut Chutney',
+    Lunch: 'Gajar Matar Sabji & Panch Ratn Dal<br>Extra:<span class="extra">Egg Biryani</span>',
+    Dinner: 'Methi Aloo,Arhar Dal Tadka<br>Extra:<span class="extra">Paneer Butter Masala,Handhi Chicken,Kaju Katli</span>'
+  },
+  Saturday: {
+    Morning: 'Poha,Curd,Jalebi',
+    Lunch: 'Palak Chana Dal,Bajra-Makka ki Roti & Veg Raita <br> Extra:<span class="extra">Paneer Tikka Masala,Chilly Chicken</span>',
+    Dinner: 'Matar Paneer/Muglai Chicken,Red Masoor Dal,Jeera Rice<br>Extra:<span class="extra">Ras Malai/Kesariya Milk</span>'
+  },
+  Sunday: {
+    Morning: 'Masala Dosa,Plain Dosa,Sambhar & Coconut Chutney',
+    Lunch: 'Paratha(paneer-2pcs,Aloo,Mix Veg) chhole,Lahsun/Green Chutney<br>Extra:<span class="extra">French Fries</span>',
+    Dinner: 'Aloo-Matar Tamatar/Matar Nimona,mix Dal,Kheer/Sewai<br>Extra:<span class="extra">Mutton Cury(Pre-booking),kalakand/Misthi Dahi</span>'
+  }
+};
+// -----------------------hall dues show------------------
+function showHallDues() {
+    location.href = "dues.html";
+}
+const hallDuesButton = document.getElementById('hall-dues');
+hallDuesButton.addEventListener('click', showHallDues);
+
+// ----------------------hall due show end------------------
+const daySelector = document.getElementById('day-selector');
+const menuContainer = document.getElementById('menu-items');
+
+// Add "Today" option to the dropdown
+const today = new Date();
+const todayDay = today.toLocaleString('default', { weekday: 'long' });
+const todayOption = document.createElement('option');
+todayOption.value = todayDay;
+todayOption.text = 'Today';
+todayOption.selected = true;
+daySelector.add(todayOption, 0);
+
+// Function to update the menu based on the selected day
+const updateMenu = (day) => {
+  let menu = '';
+  for (let meal in menuItems[day]) {
+    menu += `<div><strong>${meal}:</strong> ${menuItems[day][meal]}</div>`;
+  }
+  menuContainer.innerHTML = menu;
+}
+
+// Set the menu to today's menu when the page loads
+updateMenu(todayDay);
+
+// Update the menu when a different day is selected
+daySelector.addEventListener('change', (e) => {
+  updateMenu(e.target.value);
+});
+
+    </script>
+</body>
+</html>

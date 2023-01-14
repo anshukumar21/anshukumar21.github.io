@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Hall Dues</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Hall Dues</h1>
+      <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+          <form>
+            <div class="form-group">
+              <label for="roll-number">Enter your Roll Number</label>
+              <input type="text" class="form-control" id="roll-number" placeholder="Enter your 6 digit Roll Number">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+          <div id="dues-result"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+        // Initialize the API client with your API key
+        gapi.load('client', () => {
+          gapi.client
+            .init({
+              apiKey: '8b3459097c0b49c65fe96c629fecf89075f36859"',
+              // Your API key from the Google Cloud Console
+              discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4']
+            })
+            .then(() => {
+              // Define the spreadsheet ID and range
+              const spreadsheetId = '1ZaqBi5M2UCcBxlDi6g360pwH-Wt_BeNAcqVHrdrPE8Q';
+              const range = 'Sheet1!A1:Z';
+    
+              // Get the current month
+              const currentMonth = new Date().toLocaleString('default', {
+                month: 'long'
+              });
+    
+              // Listen for the form submit
+              $('#submit-btn').click(async e => {
+                e.preventDefault();
+    
+                // Get the roll number from the input field
+                const rollNumber = $('#roll-number').val();
+    
+                // Get the data from the spreadsheet
+                const response = await gapi.client.sheets.spreadsheets.values.get({
+                  spreadsheetId,
+                  range
+                });
+                const data = response.result.values;
+    
+                // Find the row with the matching roll number
+                const studentData = data.find(row => row[0] === rollNumber);
+    
+                // If a matching roll number is found
+                if (studentData) {
+                  let grossTotal = 0;
+                  // Iterate through the student's data for the current month
+                  for (let i = 1; i < studentData.length; i++) {
+                    if (studentData[i] === currentMonth) {
+                      // sum up the gross total
+                      grossTotal += parseInt(studentData[i+1]);
+                    }
+                  }
+                  // Display the gross total on the page
+                  $('#dues-result').html(`<h3>Your gross total for ${currentMonth} is: ${grossTotal}</h3>`);
+                } else {
+                  // If a matching roll number is not found
+                  $('#dues-result').html(`<h3>No data found for roll number: ${rollNumber}</h3>`);
+                }
+              });
+            });
+        });
+    </script>          
+</body>
+</html>
